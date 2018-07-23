@@ -1,6 +1,7 @@
 Module.register("MMM-Bob-Ross", {
 	defaults: {
 		imgHeight: "30vh",
+		videoHeight: "30vh",
 		autoPlay: true,
 	},
 
@@ -74,7 +75,7 @@ Module.register("MMM-Bob-Ross", {
 			console.log("Playing:",video.src)
 			video.setAttribute("frameborder", "0");
 			video.setAttribute("allow", "autoplay");
-			video.style.height = this.config.imgHeight;
+			video.style.height = this.config.videoHeight;
 			video.classList.add("bob-ross-video");
 			this.videoRef = video;
 			this.imageRef = false;
