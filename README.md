@@ -1,5 +1,5 @@
 # MMM-Bob-Ross
-![Demo1](https://i.imgur.com/gIFZl54.gif) ![Demo2](https://i.imgur.com/Edwy8C0.png)<br/>
+![Demo1](https://i.imgur.com/gIFZl54.gif)<br/>
 Why not put a happy little cabin on your happy little [MagicMirror²](https://github.com/MichMich/MagicMirror)?
 Bob Ross is the quintessential wholesome TV guy, so I thought it was time for him to make his debut on the silver screen... or reflective screen I guess. <br/><br/>
 Displays a random Bob Ross painting when started, but can also play the episode where he paints it.
