@@ -2,6 +2,7 @@ Module.register("MMM-Bob-Ross", {
 	defaults: {
 		imgHeight: "30vh",
 		videoHeight: "30vh",
+		updateInterval: 1*60*60*1000, //Once an hour
 		autoPlay: true,
 	},
 
@@ -21,6 +22,8 @@ Module.register("MMM-Bob-Ross", {
 
 		this.videoRef;
 		this.imageRef;
+
+		this.timeoutRef;
 	},
 
 	selectEpisode(info){
@@ -36,10 +39,18 @@ Module.register("MMM-Bob-Ross", {
 			self.currentEpisode = self.episodes[info];
 		}else{
 			self.currentEpisode = self.episodes[Math.floor(Math.random() * self.episodes.length)];
-			console.log(self.currentEpisode)
 		}
 
-		this.updateDom();
+		if(self.config.updateInterval > 0){
+			clearTimeout(self.timeoutRef);
+			self.timeoutRef = undefined;
+			self.timeoutRef = setTimeout(() => {
+				self.selectEpisode.bind(self);
+				self.selectEpisode();
+			}, self.config.updateInterval);
+		}
+
+		self.updateDom();
 	},
 
 	switchToPicture(){
